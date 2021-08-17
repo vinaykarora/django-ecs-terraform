@@ -35,7 +35,7 @@ variable "private_subnet_2_cidr" {
 variable "availability_zones" {
   description = "Availability zones"
   type        = list(string)
-  default     = ["us-west-1a", "us-west-1b"]
+  default     = ["us-west-1b", "us-west-1c"]
 }
 
 # load balancer
@@ -63,7 +63,7 @@ variable "instance_type" {
 }
 variable "docker_image_url_django" {
   description = "Docker image to run in the ECS cluster"
-  default     = "<AWS_ACCOUNT_ID>.dkr.ecr.us-west-1.amazonaws.com/django-app:latest"
+  default     = "ghcr.io/vinaykarora/django-app:latest"
 }
 variable "app_count" {
   description = "Number of Docker containers to run"
