@@ -15,7 +15,7 @@ resource "aws_alb_target_group" "default-target-group" {
   vpc_id   = aws_vpc.production-vpc.id
 
   health_check {
-    path                = var.health_check_path_client
+    path                = var.health_check_path
     port                = "traffic-port"
     healthy_threshold   = 5
     unhealthy_threshold = 2
@@ -33,7 +33,7 @@ resource "aws_alb_target_group" "users-target-group" {
   vpc_id   = aws_vpc.production-vpc.id
 
   health_check {
-    path                = var.health_check_path_users
+    path                = var.health_check_path
     port                = "traffic-port"
     healthy_threshold   = 5
     unhealthy_threshold = 2
